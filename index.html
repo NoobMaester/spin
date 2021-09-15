@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading spinner</title>
+    <style>
+        .loading{
+            margin: 2rem auto;
+            display: flex;
+            justify-content: center;
+        }
+        .loading-reverse{
+            display: flex;
+            justify-content: center;
+        }
+        .loading-reverse::after{
+            content: "";
+            width: 40px;
+            height: 40px;
+            border: 1px solid #dddddd;
+            border-left-color: #009579;
+            border-right-color: #009579;
+            border-radius: 50%;
+            position: relative;
+            top: 16%;
+            left: 124%;
+            animation: loading-reverse 1s linear infinite;
+        }
+        .loading::after{
+            content: "";
+            width: 60px;
+            height: 60px;
+            border: 1px solid #dddddd;
+            border-top-color: #009579;
+            border-bottom-color: #009579;
+            border-radius: 50%;
+            animation: loading 0.8s ease infinite;
+        }
+        @keyframes loading{
+            to{transform: rotate(1turn);}
+        }
+        @keyframes loading-reverse{
+            to{transform: rotate(-1turn);}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="loading-reverse"></div>
+    </div>    
+</body>
+</html>
